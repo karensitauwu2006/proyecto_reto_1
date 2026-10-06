@@ -43,7 +43,7 @@ def registrar(nombre_usuario_str, contraseña_str):
     print("=" * 50)
 
     if nombre_usuario_str in usuarios_dict:
-        print("\n[!] El usuario ya está registrado.")
+        print("\n[!] El usuario ya está registrado.")  # si el usario esta en el archivo, no registrar
         print("=" * 50)
         return
 
@@ -56,13 +56,13 @@ def registrar(nombre_usuario_str, contraseña_str):
 
 
 def iniciar_sesion(nombre_usuario_str, contraseña_str):
-    global usuario_actual_str
+    global usuario_actual_str  # importante hacer global la variable
 
     print("\n" + "=" * 50)
     print("                 INICIO DE SESIÓN")
     print("=" * 50)
 
-    if nombre_usuario_str not in usuarios_dict:
+    if nombre_usuario_str not in usuarios_dict:   # si no esta no iniciar sesion
         print("\n[!] El usuario no está registrado.")
         print("=" * 50)
         return
