@@ -159,3 +159,77 @@ def configurar_motor():
 
     return resultado_dict
 
+def mostrar_configuracion(configuracion_dict):  # creamos funcion para mostrar la configuracion
+    limpiar()
+
+    print("\n")
+    print("=" * 60)
+    print("                 CONFIGURACIÓN ACTUAL")
+    print("=" * 60)
+
+    if configuracion_dict["calidad"] == "baja":      #ponemos las diferentees opciones de caliad
+        print("Calidad:           |---------")
+
+    elif configuracion_dict["calidad"] == "media":
+        print("Calidad:           ----|----")
+
+    else:
+        print("Calidad:           --------|")  #si elige alguna otra opcion no disponible 
+
+    print("-" * 60)
+    print(f"Proyecto:          {configuracion_dict['nombre']}")
+    print(f"Resolución:        {configuracion_dict['resolucion']}")
+    print(f"Límite de FPS:     {configuracion_dict['fps']}")
+    print(f"Sombras:            {configuracion_dict['sombras']}")
+    print(f"Trazado de rayos:  {configuracion_dict['trazado_de_rayos']}")
+    print(f"Brillo:             {configuracion_dict['brillo']}")
+    print(f"Enfoque de lente:  {configuracion_dict['enfoque_de_lente']}")
+    print("=" * 60)
+
+
+# ============================================================
+#                       SISTEMA PRINCIPAL
+# ============================================================
+
+while not usuario_actual_str:
+    limpiar()
+
+    print("\n" + "-" * 60)                                 
+    print("                    MENÚ PRINCIPAL")
+    print("-" * 60)
+    print("  [1] Iniciar sesión")
+    print("  [2] Registrarse")
+    print("  [3] Salir")
+    print("-" * 60)
+
+    opcion_str = input("Selecciona una opción: ")            
+
+    if opcion_str == "1":  #opcion para iniciar sesion si el usuario ya tiene cuenta
+        nombre_usuario_str = input("usuario: ")
+        contraseña_str = input("contraseña: ")
+
+        limpiar()
+
+        iniciar_sesion(
+            nombre_usuario_str,
+            contraseña_str
+        )
+
+    elif opcion_str == "2":  #opcion para registrarse si el usuario no tiene cuenta
+        nombre_usuario_str = input("usuario: ")
+        contraseña_str = input("contraseña: ")
+
+        limpiar()
+
+        registrar(
+            nombre_usuario_str,
+            contraseña_str
+        )
+
+    elif opcion_str == "3":  #opcion para salir del programa 
+        limpiar()                            
+
+        print("\nSaliendo del programa...")
+        print("¡Hasta luego!")
+        exit()
+
