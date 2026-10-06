@@ -77,3 +77,85 @@ def iniciar_sesion(nombre_usuario_str, contraseña_str):
     print("\n[OK] Inicio de sesión exitoso.")
     print(f"[+] Bienvenido, {nombre_usuario_str}.")
     print("=" * 50)
+
+#Crear funcion que muestra en pantalla que accedes al configurador del motor
+def configurar_motor():
+    limpiar()
+
+    print("\n")
+    print("=" * 60)
+    print("              CONFIGURADOR DEL MOTOR")
+    print("=" * 60)
+
+    #Le pedimos al usuario el nombre de su configuracion
+    nombre_configuracion_str = input("\nEscribe el nombre para tu configuración: ")
+
+    #Mostramos al usuario las opciones de calidad
+    print("\n" + "-" * 60)
+    print("              NIVEL DE CALIDAD GRÁFICA")
+    print("-" * 60)
+    print("  [1] Baja   - Mejor rendimiento")
+    print("  [2] Media  - Calidad equilibrada")
+    print("  [3] Alta   - Calidad ultra, bajo rendimiento")
+    print("-" * 60)
+
+    opcion_usuario_int = 0
+    #Bucle para dar a elegir las 3 opciones
+    while opcion_usuario_int not in (1, 2, 3):
+        opcion_usuario_int = int(input("\nEscribe 1, 2 o 3: "))
+
+    #Aqui se ejecutan los diferentes casos dependiendo la entrada del usuario
+    if opcion_usuario_int == 1:
+        resultado_dict = {
+            "nombre": nombre_configuracion_str,
+            "calidad": "baja",
+            "resolucion": "720p",
+            "fps": 144,
+            "sombras": "apagadas",
+            "trazado_de_rayos": "apagado",
+            "brillo": "apagado",
+            "enfoque_de_lente": "apagado"
+        }
+
+    elif opcion_usuario_int == 2:
+        resultado_dict = {
+            "nombre": nombre_configuracion_str,
+            "calidad": "media",
+            "resolucion": "1080p",
+            "fps": 90,
+            "sombras": "medias",
+            "trazado_de_rayos": "apagado",
+            "brillo": "encendido",
+            "enfoque_de_lente": "encendido"
+        }
+
+    else:
+        resultado_dict = {
+            "nombre": nombre_configuracion_str,
+            "calidad": "alta",
+            "resolucion": "4K",
+            "fps": 30,
+            "sombras": "ultra",
+            "trazado_de_rayos": "ultra",
+            "brillo": "encendido",
+            "enfoque_de_lente": "encendido"
+        }
+    #Limpiamos panatalla
+    limpiar()
+    #Muestra al usuario el comienzo de la configuracion
+    print("\n" + "=" * 60)
+    print("          INICIALIZANDO HERRAMIENTAS GRÁFICAS")
+    print("=" * 60)
+    #Insertamos retraso para que parezca que carga
+    time.sleep(1)
+    #Un bucle for para que repase 1 a 1 todas las cargas y muestre al usuario
+    for elemento_str in AJUSTES_MOTOR_LIST:
+        print(f"  -> Configurando: {elemento_str:<25} [OK]")
+        time.sleep(1.5)
+    #Se le muestra al usuario
+    print("=" * 60)
+    print("[OK] Configuración completada correctamente.")
+    print("=" * 60)
+
+    return resultado_dict
+
