@@ -233,3 +233,59 @@ while not usuario_actual_str:
         print("¡Hasta luego!")
         exit()
 
+limpiar()
+# Bucle principal del panel de control. Se repetirá hasta que el usuario decida salir
+print("\n")
+print("=" * 60)
+print(f"             SESIÓN ACTIVA: {usuario_actual_str}")
+print("=" * 60)
+
+configuracion_dict = configuraciones_dict.get(usuario_actual_str)
+
+
+while True:
+    limpiar()
+     # Mostramos las diferentes opciones disponibles en el panel de control
+    print("\n" + "-" * 60)
+    print("                PANEL DE CONTROL")
+    print("-" * 60)
+    print("  [1] Configurar motor")
+    print("  [2] Mostrar configuración")
+    print("  [3] Salir")
+    print("-" * 60)
+    
+     # Pedimos al usuario que seleccione una de las opciones
+    opcion_str = input("Selecciona una opción: ")
+    
+    # Si el usuario selecciona la opcion 1, se crea una nueva configuracion del motor
+    if opcion_str == "1":
+        configuracion_dict = configurar_motor()
+        # Guardamos la configuracion asociada al usuario que tiene la sesion iniciada
+        configuraciones_dict[usuario_actual_str] = configuracion_dict
+        # Guardamos todas las configuraciones en el archivo JSON
+        guardar_json(ARCHIVO_CONFIG_STR, configuraciones_dict)
+
+        print("\n[OK] Configuración guardada correctamente.")
+
+    # Si el usuario selecciona la opcion 2, mostramos su configuracion actual
+    elif opcion_str == "2":
+        
+        # Comprobamos si el usuario todavía no tiene ninguna configuracion creada
+        if configuracion_dict is None:
+            limpiar()
+            print("\n[!] Todavía no hay ninguna configuración.")
+        # Si existe una configuracion, la mostramos por pantalla
+        else:
+            mostrar_configuracion(configuracion_dict)
+            input("\nPresiona ENTER para volver al panel...")
+
+    # Si el usuario selecciona la opcion 3, cerramos la sesion y salimos del bucle
+    elif opcion_str == "3":
+        limpiar()
+
+        print("\n" + "=" * 60)
+        print("              CERRANDO SESIÓN...")
+        print("=" * 60)
+
+        # Salimos del bucle principal del panel de control
+        break
