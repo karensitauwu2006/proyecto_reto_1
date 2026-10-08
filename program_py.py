@@ -264,6 +264,8 @@ while True:
         configuraciones_dict[usuario_actual_str] = configuracion_dict
         # Guardamos todas las configuraciones en el archivo JSON
         guardar_json(ARCHIVO_CONFIG_STR, configuraciones_dict)
+        
+        time.sleep(1)
 
         print("\n[OK] Configuración guardada correctamente.")
 
