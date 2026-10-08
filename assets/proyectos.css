@@ -1,0 +1,25 @@
+/*En este archivo css se encuentran los estilos de la pagina proyectos --!>*/
+.links {
+  background-color: black;
+  margin: 10px;
+  padding: 10px;
+}
+
+.links > p {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.links > a {
+  display: block;
+  text-decoration: none;
+}
+
+.links > a:hover {
+  text-decoration: underline;
+}
+
+.links a:nth-child(2) {
+  margin-bottom: 10px;
+}
+/* Hecho por Oier */
