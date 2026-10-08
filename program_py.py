@@ -44,6 +44,7 @@ def registrar(nombre_usuario_str, contraseña_str):
 
     if nombre_usuario_str in usuarios_dict:
         print("\n[!] El usuario ya está registrado.")  # si el usario esta en el archivo, no registrar
+        time.sleep(1)
         print("=" * 50)
         return
 
@@ -51,7 +52,9 @@ def registrar(nombre_usuario_str, contraseña_str):
     guardar_json(ARCHIVO_USUARIOS_STR, usuarios_dict)
 
     print("\n[OK] Registro exitoso.")
+    time.sleep(1)
     print(f"[+] Usuario creado: {nombre_usuario_str}")
+    time.sleep(1)
     print("=" * 50)
 
 
@@ -64,18 +67,22 @@ def iniciar_sesion(nombre_usuario_str, contraseña_str):
 
     if nombre_usuario_str not in usuarios_dict:   # si no esta no iniciar sesion
         print("\n[!] El usuario no está registrado.")
+        time.sleep(1)
         print("=" * 50)
         return
 
     if usuarios_dict[nombre_usuario_str] != contraseña_str:
         print("\n[!] Contraseña incorrecta.")
+        time.sleep(1)
         print("=" * 50)
         return
 
     usuario_actual_str = nombre_usuario_str
 
     print("\n[OK] Inicio de sesión exitoso.")
+    time.sleep(1)
     print(f"[+] Bienvenido, {nombre_usuario_str}.")
+    time.sleep(1)
     print("=" * 50)
 
 #Crear funcion que muestra en pantalla que accedes al configurador del motor
@@ -168,13 +175,13 @@ def mostrar_configuracion(configuracion_dict):  # creamos funcion para mostrar l
     print("=" * 60)
 
     if configuracion_dict["calidad"] == "baja":      #ponemos las diferentees opciones de caliad
-        print("Calidad:           |---------")
+        print("Calidad:           ▱▱▱▱▱▱▱▱")
 
     elif configuracion_dict["calidad"] == "media":
-        print("Calidad:           ----|----")
+        print("Calidad:           ▰▰▰▰▱▱▱▱")
 
     else:
-        print("Calidad:           --------|")  #si elige alguna otra opcion no disponible 
+        print("Calidad:           ▰▰▰▰▰▰▰▰")  #si elige alguna otra opcion no disponible 
 
     print("-" * 60)
     print(f"Proyecto:          {configuracion_dict['nombre']}")
@@ -264,6 +271,8 @@ while True:
         configuraciones_dict[usuario_actual_str] = configuracion_dict
         # Guardamos todas las configuraciones en el archivo JSON
         guardar_json(ARCHIVO_CONFIG_STR, configuraciones_dict)
+        
+        time.sleep(1)
 
         print("\n[OK] Configuración guardada correctamente.")
 

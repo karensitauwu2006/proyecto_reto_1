@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fondo casi negro para ahorrar consumo de pantalla */
+    color: #e0e0e0;            /* Texto gris claro para que sea fácil de leer */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #4CAF50; /* Línea verde que representa Green Software */
+}
+
+header h1 {
+    margin: 0;
+    color: #4CAF50; 
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #4CAF50;
+}
+
+main {
+    width: 80%;
+    margin: 30px auto;
+}
+
+section {
+    background-color: #1e1e1e;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #4CAF50;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+article {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 4px solid #4CAF50;
+}
+
+h3 {
+    color: #ffffff;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1e1e1e;
+    border-top: 2px solid #333;
+    margin-top: 40px;
+}
+
+.ods-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.ods-item {
+    display: flex;
+    align-items: center;
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.ods-item img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.ods-item p {
+    margin: 0;
+    line-height: 1.5;
+}
