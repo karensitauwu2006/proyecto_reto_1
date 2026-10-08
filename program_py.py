@@ -44,6 +44,7 @@ def registrar(nombre_usuario_str, contraseña_str):
 
     if nombre_usuario_str in usuarios_dict:
         print("\n[!] El usuario ya está registrado.")  # si el usario esta en el archivo, no registrar
+        time.sleep(1)
         print("=" * 50)
         return
 
@@ -51,7 +52,9 @@ def registrar(nombre_usuario_str, contraseña_str):
     guardar_json(ARCHIVO_USUARIOS_STR, usuarios_dict)
 
     print("\n[OK] Registro exitoso.")
+    time.sleep(1)
     print(f"[+] Usuario creado: {nombre_usuario_str}")
+    time.sleep(1)
     print("=" * 50)
 
 
@@ -64,18 +67,22 @@ def iniciar_sesion(nombre_usuario_str, contraseña_str):
 
     if nombre_usuario_str not in usuarios_dict:   # si no esta no iniciar sesion
         print("\n[!] El usuario no está registrado.")
+        time.sleep(1)
         print("=" * 50)
         return
 
     if usuarios_dict[nombre_usuario_str] != contraseña_str:
         print("\n[!] Contraseña incorrecta.")
+        time.sleep(1)
         print("=" * 50)
         return
 
     usuario_actual_str = nombre_usuario_str
 
     print("\n[OK] Inicio de sesión exitoso.")
+    time.sleep(1)
     print(f"[+] Bienvenido, {nombre_usuario_str}.")
+    time.sleep(1)
     print("=" * 50)
 
 #Crear funcion que muestra en pantalla que accedes al configurador del motor
