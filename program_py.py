@@ -168,13 +168,13 @@ def mostrar_configuracion(configuracion_dict):  # creamos funcion para mostrar l
     print("=" * 60)
 
     if configuracion_dict["calidad"] == "baja":      #ponemos las diferentees opciones de caliad
-        print("Calidad:           |---------")
+        print("Calidad:           ▱▱▱▱▱▱▱▱")
 
     elif configuracion_dict["calidad"] == "media":
-        print("Calidad:           ----|----")
+        print("Calidad:           ▰▰▰▰▱▱▱▱")
 
     else:
-        print("Calidad:           --------|")  #si elige alguna otra opcion no disponible 
+        print("Calidad:           ▰▰▰▰▰▰▰▰")  #si elige alguna otra opcion no disponible 
 
     print("-" * 60)
     print(f"Proyecto:          {configuracion_dict['nombre']}")
