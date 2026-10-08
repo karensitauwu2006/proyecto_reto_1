@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sostenibilidad</title>
+    <link rel="stylesheet" href="assets/base_de_datos.css" />
+  </head>   <!--La pagina de base de datos la ha hecho Marco-->
+  <body>
+    <header>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="sobre_taco_engine.html">Sobre TacoEngine</a>
+        <a href="sostenibilidad.html">Sostenibilidad</a>
+        <a href="digitalizacion.html">Digitalizacion</a>
+        <a href="empleabilidad.html">Empleabilidad</a>
+        <a href="base_de_datos.html">Base de datos</a>
+        <a href="foro.html">Foro</a>
+        <a href="proyectos.html">Proyectos</a>
+      </nav>
+
+      <div class="logo-container">
+        <img
+          src="assets/imgs/logo.png"
+          alt=""
+          class="logo"
+        />
+      </div>
+    </header>
+    <!-- Introducción: qué información centraliza la base de datos y qué queda fuera (archivos pesados) -->
+    <main>
+      <section class="project-info">
+        <h2 class="project-title">Base de datos</h2>
+        <div class="project-container">
+          <p>
+            La base de datos de la startup tendrá como objetivo centralizar toda
+            la información necesaria para la gestión del motor gráfico y de los
+            servicios asociados. Entre los datos almacenados se incluirán
+            usuarios, roles, licencias, compras del marketplace, proyectos,
+            incidencias, versiones del motor, información económica y gestión
+            interna de la empresa. Los archivos pesados como modelos 3D,
+            texturas o ejecutables no se almacenarán directamente en la base de
+            datos, sino en sistemas de almacenamiento especializados,
+            manteniendo en la base de datos únicamente sus metadatos y
+            referencias.
+          </p>
+        </div>
+      </section>
+
+      <section class="project-info">
+        <h2 class="project-title">Sistema de gestion de base de datos</h2>
+        <div class="project-container">
+          <p>
+            Hemos decidido utilizar una base de datos relacional como sistema
+            principal de almacenamiento de información. Esta elección se debe a
+            que la mayor parte de los datos gestionados por la empresa presentan
+            relaciones claramente definidas y requieren altos niveles de
+            consistencia, integridad y seguridad.
+          </p>
+        </div>
+      </section>
+
+     <!-- Elección del SGBD concreto: MySQL vs PostgreSQL -->
+      <section class="project-info">
+        <h2 class="project-title">Sistema gestor de base de datos</h2>
+        <div class="project-container">
+          <p>
+            Entre las diferentes opciones disponibles encontramos MySQL y
+            PostgreSQL, dos SGBD relacionales que utilizan SQL y que permiten
+            trabajar con tablas relacionadas, claves, consultas y transacciones.
+          </p>
+
+          <p>
+            Ambas opciones serían viables para nuestro proyecto, ya que permiten
+            gestionar correctamente la estructura de datos que hemos planteado.
+            Por tanto, no consideramos que exista una necesidad concreta de
+            descartar uno de los dos debido a las necesidades actuales de
+            nuestra startup.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
